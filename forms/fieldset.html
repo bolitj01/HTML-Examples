@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Survey</title>
+    <link rel="icon" type="image/x-icon" href="./monster-icon.png">
+</head>
+<body>
+    <form>
+        <fieldset>
+          <legend>Choose your favorite monster</legend>
+      
+          <input type="radio" id="kraken" name="monster">
+          <label for="kraken">Kraken</label>
+          <br/>
+          <input type="radio" id="sasquatch" name="monster">
+          <label for="sasquatch">Sasquatch</label>
+          <br/>
+          <input type="radio" id="godzilla" name="monster">
+          <label for="godzilla">Godzilla</label>
+          <br/>
+          <input type="radio" id="dracula" name="monster">
+          <label for="dracula">Dracula</label>
+          <br/>
+          <input type="radio" id="frankenstein" name="monster">
+          <label for="frankenstein">Frankenstein</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tell us why</legend>
+
+          <select id="reason">
+            <option value="scary">It's scary!</option>
+            <option value="cool">It's magnificent!</option>
+            <option value="funny">It's fascinating!</option>
+            <option value="mysterious">It's mysterious!</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>What color is this monster?</legend>
+          <label for="monster-color">Choose a color: </label>
+          <input type="color" name="monster-color" id="monster-color">
+        </fieldset>
+
+        <fieldset>
+          <legend>When was this monster born/created?</legend>
+          <label for="monster-birthday">Month/Year: </label>
+          <input type="month" name="monster-birthday" id="monster-birthday">
+        </fieldset>
+
+        <input type="submit" value="Submit">
+      </form>
+</body>
+</html>

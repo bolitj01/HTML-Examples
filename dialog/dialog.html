@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+</head>
+
+<body>
+    <button onclick="addRecord()">Add Record</button>
+    <table>
+        <caption>Records</caption>
+    </table>
+    <dialog>
+        <h2>Delete Confirmation</h2>
+        <p>Are you sure you want to delete this record?</p>
+        <label for="backup">Save record in audit history</label>
+        <input type="checkbox" name="backup" id="" checked>
+        <br>
+        <button id="confirm">Confirm</button>
+        <button id="cancel">Cancel</button>
+    </dialog>
+
+    <!-- This small script will make the dialog open and close -->
+    <script>
+        let rowToDelete = null;
+
+        function addRecord() {
+            const table = document.querySelector('table');
+            const tr = document.createElement('tr');
+            tr.style.outline = '1px solid black';
+            
+            const td = document.createElement('td');
+            td.textContent = `Important Record ${table.children.length}`;
+            tr.appendChild(td);
+
+            const td2 = document.createElement('td');
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.addEventListener('click', () => {
+                rowToDelete = tr;
+                dialog.showModal();
+                console.log('Delete button clicked');
+            });
+            td2.appendChild(deleteBtn);
+            tr.appendChild(td2);
+
+            table.appendChild(tr);
+        }
+        
+        const confirmBtn = document.getElementById('confirm');
+        const cancelBtn = document.getElementById('cancel');
+
+        confirmBtn.addEventListener('click', () => {
+            if (rowToDelete) {
+                rowToDelete.remove();
+                rowToDelete = null;
+            }
+
+            console.log('Confirm button clicked');
+            if (document.querySelector('input[name="backup"]').checked) {
+                console.log('Record saved in audit history');
+            }
+            dialog.close();
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            console.log('Deletion cancelled');
+            dialog.close();
+        });
+        
+
+        const dialog = document.querySelector('dialog');
+        //Close dialog when user does not click on the dialog or any of its children
+        dialog.addEventListener('click', (e) => {
+            if (e.target !== dialog && !dialog.contains(e.target)) {
+                dialog.close();
+            }
+        });
+    </script>
+</body>
+
+</html>
