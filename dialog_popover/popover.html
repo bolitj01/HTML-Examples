@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast with Popover</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+      }
+
+      /* Toast styling */
+      #toast:popover-open {
+        background: #333;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        inset: unset;
+        right: 5vw;
+        bottom: 5vh;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button id="showToast" popovertarget="toast" popovertargetaction="show">
+      Show Toast
+    </button>
+    <button popovertarget="toast" popovertargetaction="hide">
+        Hide Toast
+    </button>
+
+    <!-- Toast popover -->
+    <div id="toast" popover>✅ Saved successfully!</div>
+
+
+    <!-- Extra popover behavior -->
+    <script>
+      const toast = document.getElementById("toast");
+      const button = document.getElementById("showToast");
+
+      button.addEventListener("click", () => {
+        // Hide automatically after 3 seconds
+        setTimeout(() => {
+          toast.hidePopover();
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
