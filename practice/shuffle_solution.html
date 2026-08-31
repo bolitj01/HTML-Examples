@@ -1,0 +1,111 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Nesting Shuffle Solution</title>
+  <style>
+    :root {
+      color: #1f2933;
+      background: #f3f6f5;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    body {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    main {
+      background: #ffffff;
+      border: 1px solid #cbd5d0;
+      border-radius: 6px;
+      box-shadow: 0 8px 22px rgba(31, 41, 51, 0.08);
+      padding: 32px;
+    }
+
+    h1,
+    h2 {
+      color: #174a45;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    p {
+      line-height: 1.55;
+    }
+
+    .solution {
+      background: #182b2a;
+      border-radius: 4px;
+      color: #e9f3ef;
+      font-family: Consolas, "Courier New", monospace;
+      line-height: 1.55;
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+
+    section {
+      border-top: 1px solid #cbd5d0;
+      margin-top: 32px;
+      padding-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Community Workshop</h1>
+      <nav>
+        <a href="#about">About</a> | <a href="#schedule">Schedule</a> |
+        <a href="#register">Register</a>
+      </nav>
+    </header>
+    <section id="about">
+      <h2>Make Time to Learn</h2>
+      <p>Join a friendly morning of practical learning and conversation.</p>
+      <figure>
+        <img
+          src="https://placehold.co/700x250/dae9e5/1f5c5c?text=Workshop+Table"
+          alt="A workshop table with notebooks"
+          width="80%"
+        />
+        <figcaption>Bring your curiosity and a notebook.</figcaption>
+      </figure>
+    </section>
+    <section id="schedule">
+      <h2>Workshop Schedule</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9:00 AM</td>
+            <td>Welcome</td>
+          </tr>
+          <tr>
+            <td>9:30 AM</td>
+            <td>Build something</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="register">
+      <h2>Reserve a Seat</h2>
+      <form>
+        <label for="student-name">Your name</label>
+        <input id="student-name" name="name" type="text" required />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+</body>
+
+<html lang="en"></html>
+
+<!doctype html>
